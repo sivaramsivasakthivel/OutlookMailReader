@@ -23,5 +23,5 @@ def send_twil_msg(content):
     print(message.sid)
 
 
-send_twil_msg("Hello")
+#send_twil_msg("Hello")
 
