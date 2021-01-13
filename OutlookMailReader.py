@@ -20,6 +20,7 @@ for  message in inbox.Items:
     
 if unread > 1 :  
         finalMsg = "Total number of unread mails is {}.Please check".format(unread)
+        twilio_Sms_send.send_twil_msg(finalMsg)
         print (finalMsg)
         
 
