@@ -1,4 +1,5 @@
 import win32com.client
+import twilio_Sms_send
 outlook = win32com.client.Dispatch('outlook.application')
 mapi = outlook.GetNamespace("MAPI")
 inbox = mapi.GetDefaultFolder(6)
@@ -14,6 +15,7 @@ for  message in inbox.Items:
         msgSubject=message.Subject
         msgSender=message.Sender
         finalMsg= "Received a new mail with Subject: {} from {}.Please check.".format(msgSubject,msgSender)
+        twilio_Sms_send.send_twil_msg(finalMsg)
         print (finalMsg)    
     
 if unread > 1 :  
